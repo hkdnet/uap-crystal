@@ -1,6 +1,6 @@
 # user_agent_parser
 
-TODO: Write a description here
+Simple and useful lib for parsing user agent string.
 
 ## Installation
 
@@ -21,13 +21,6 @@ dependencies:
 require "user_agent_parser"
 ```
 
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
 ## Contributing
 
 1. Fork it ( https://github.com/hkdnet/user_agent_parser/fork )
@@ -39,3 +32,4 @@ TODO: Write development instructions here
 ## Contributors
 
 - [hkdnet](https://github.com/hkdnet) hkdnet - creator, maintainer
+- [ua-parser/uap-ruby](https://github.com/ua-parser/uap-ruby) - cap-crystal is highly inspired by this
