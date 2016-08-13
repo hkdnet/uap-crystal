@@ -2,7 +2,7 @@ module UserAgentParser
   class UserAgent
     getter family : String
     getter version : UserAgentParser::Version?
-    getter os : String?
+    getter os : UserAgentParser::OperatingSystem?
     getter device : String?
 
     def name
