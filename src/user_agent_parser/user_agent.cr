@@ -3,7 +3,7 @@ module UserAgentParser
     getter family : String
     getter version : UserAgentParser::Version?
     getter os : UserAgentParser::OperatingSystem?
-    getter device : String?
+    getter device : UserAgentParser::Device?
 
     def name
       family
@@ -15,19 +15,19 @@ module UserAgentParser
 
     def to_s
       string = family
-      string += " #{version}" if version
+      string += " #{version.to_s}" if version
       string
     end
 
     def inspect
       string = to_s
-      string += " (#{os})" if os
-      string += " (#{device})" if device
+      string += " (#{os.to_s})" if os
+      string += " (#{device.to_s})" if device
       "#<#{self.class} #{string}>"
     end
 
     def eql?(other)
-      self.class.eql?(other.class) &&
+      self.class == other.class &&
         family == other.family &&
         version == other.version &&
         os == other.os
