@@ -9,8 +9,8 @@ module UserAgentParser
     getter! version : String
     @segments : Array(String) | Nil
 
-    def to_s
-      version
+    def to_s(io : IO)
+      @version.to_s(io)
     end
 
     def initialize(*args)
@@ -38,8 +38,8 @@ module UserAgentParser
       segments[3]
     end
 
-    def inspect
-      "#<#{self.class} #{to_s}>"
+    def inspect(io : IO)
+      "#<#{self.class} #{to_s}>".to_s(io)
     end
 
     def eql?(other)

@@ -13,17 +13,17 @@ module UserAgentParser
       @family = family || "Other"
     end
 
-    def to_s
+    def to_s(io : IO)
       string = family
-      string += " #{version.to_s}" if version
-      string
+      string += " #{version}" if version
+      string.to_s(io)
     end
 
-    def inspect
+    def inspect(io : IO)
       string = to_s
       string += " (#{os.to_s})" if os
       string += " (#{device.to_s})" if device
-      "#<#{self.class} #{string}>"
+      "#<#{self.class} #{string}>".to_s(io)
     end
 
     def eql?(other)

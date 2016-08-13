@@ -10,16 +10,14 @@ module UserAgentParser
     def initialize(@family = "Other", @version = nil)
     end
 
-    def to_s
+    def to_s(io : IO)
       string = family
-      unless version.nil?
-        string += " #{version.to_s}"
-      end
-      string
+      string += " #{version}" if version
+      string.to_s(io)
     end
 
-    def inspect
-      "#<#{self.class} #{to_s}>"
+    def inspect(io : IO)
+      "#<#{self.class} #{to_s}>".to_s(io)
     end
 
     def eql?(other)

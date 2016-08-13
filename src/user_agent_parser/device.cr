@@ -9,12 +9,12 @@ module UserAgentParser
     def initialize(@family = "Other")
     end
 
-    def to_s
-      family
+    def to_s(io : IO)
+      family.to_s(io)
     end
 
-    def inspect
-      "#<#{self.class} #{to_s}>"
+    def inspect(io : IO)
+      "#<#{self.class} #{to_s}>".to_s(io)
     end
 
     def eql?(other)
