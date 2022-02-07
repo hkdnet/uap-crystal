@@ -10,7 +10,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   user_agent_parser:
-    github: hkdnet/user_agent_parser
+    github: hkdnet/uap-crystal
 ```
 
 
